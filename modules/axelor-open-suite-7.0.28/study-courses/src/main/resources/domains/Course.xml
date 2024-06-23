@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_6.1.xsd">
+
+    <module name="course" package="com.axelor.apps.course.db"/>
+
+    <entity name="Course" cacheable="true">
+
+        <string name="name" title="Name" required="true"/>
+        <string name="description" title="Description"/>
+        <string name="code" title="Course Code" required="true"/>
+        <integer name="duration" title="Duration (weeks)"/>
+        <date name="startDate" title="Start Date"/>
+        <date name="endDate" title="End Date"/>
+        <string name="instructor" title="Instructor"/>
+        <integer name="capacity" title="Capacity"/>
+        <string name="location" title="Location"/>
+        <string name="status" title="Status" selection="course.status.select"/>
+        <many-to-one name="students" ref="com.axelor.apps.course.db.Course" title="Students"/>
+
+    </entity>
+
+</domain-models>

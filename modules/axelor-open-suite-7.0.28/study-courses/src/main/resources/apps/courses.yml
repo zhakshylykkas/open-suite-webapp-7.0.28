@@ -1,0 +1,13 @@
+---
+name: Study Courses
+code: study courses
+typeSelect: standard
+installOrder: 2230
+description: |
+  Education
+image: study.png
+modules:
+  study-courses
+dependsOn:
+  - base
+sequence: 2

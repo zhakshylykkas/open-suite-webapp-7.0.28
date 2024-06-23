@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+    <menuitem name="courses-root" title="Study courses" order="-650"
+              if="__config__.app.isApp('study courses')" icon="fa-sitemap" icon-background="#f4f27e"/>
+
+    <menuitem name="course-root-role" parent="courses-root" title="Courses"
+              action="course.root.role" order="110"/>
+
+    <action-view name="course.root.role" title="Courses"
+                 model="com.axelor.apps.course.db.Course">
+        <view type="grid" name="course-grid"/>
+        <view type="form" name="course-form"/>
+    </action-view>
+
+
+    <menuitem name="student-root-role" parent="courses-root" title="Students"
+              action="student.root.role" order="110"/>
+
+    <action-view name="student.root.role" title="Students"
+                 model="com.axelor.apps.course.db.Student">
+        <view type="grid" name="student-grid"/>
+        <view type="form" name="student-form"/>
+    </action-view>
+
+</object-views>

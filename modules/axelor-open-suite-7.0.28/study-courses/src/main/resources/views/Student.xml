@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_6.1.xsd">
+
+    <grid name="student-grid" title="Students" model="com.axelor.apps.course.db.Student"
+          orderBy="lastName, firstName" editable="true">
+        <field name="firstName"/>
+        <field name="lastName"/>
+        <field name="course" form-view="course-form" grid-view="course-grid"/>
+    </grid>
+
+    <form name="student-form" title="Student" model="com.axelor.apps.course.db.Student" width="large">
+        <panel name="mainPanel">
+            <field name="firstName" required="true"/>
+            <field name="lastName" required="true"/>
+            <field name="course" form-view="course-form" grid-view="course-grid"/>
+        </panel>
+    </form>
+
+</object-views>
